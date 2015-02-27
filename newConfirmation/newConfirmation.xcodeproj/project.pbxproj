@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C71B05AE1AA0148800494562 /* cardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B05AD1AA0148800494562 /* cardView.swift */; };
+		C71B05B01AA014A000494562 /* cardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71B05AF1AA014A000494562 /* cardView.xib */; };
 		C76D5D161A9FE6E00004F5E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76D5D151A9FE6E00004F5E5 /* AppDelegate.swift */; };
 		C76D5D181A9FE6E00004F5E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76D5D171A9FE6E00004F5E5 /* ViewController.swift */; };
 		C76D5D1B1A9FE6E00004F5E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C76D5D191A9FE6E00004F5E5 /* Main.storyboard */; };
 		C76D5D1D1A9FE6E00004F5E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C76D5D1C1A9FE6E00004F5E5 /* Images.xcassets */; };
 		C76D5D201A9FE6E00004F5E5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C76D5D1E1A9FE6E00004F5E5 /* LaunchScreen.xib */; };
 		C76D5D2C1A9FE6E10004F5E5 /* newConfirmationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76D5D2B1A9FE6E10004F5E5 /* newConfirmationTests.swift */; };
+		C78A41E91AA00C8200218D77 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C78A41E71AA00C8200218D77 /* Montserrat-Light.otf */; };
+		C78A41EA1AA00C8200218D77 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C78A41E81AA00C8200218D77 /* Montserrat-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C71B05AD1AA0148800494562 /* cardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cardView.swift; sourceTree = "<group>"; };
+		C71B05AF1AA014A000494562 /* cardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cardView.xib; sourceTree = "<group>"; };
 		C76D5D101A9FE6E00004F5E5 /* newConfirmation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newConfirmation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76D5D141A9FE6E00004F5E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C76D5D151A9FE6E00004F5E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +42,8 @@
 		C76D5D251A9FE6E10004F5E5 /* newConfirmationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = newConfirmationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76D5D2A1A9FE6E10004F5E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C76D5D2B1A9FE6E10004F5E5 /* newConfirmationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newConfirmationTests.swift; sourceTree = "<group>"; };
+		C78A41E71AA00C8200218D77 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
+		C78A41E81AA00C8200218D77 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				C76D5D151A9FE6E00004F5E5 /* AppDelegate.swift */,
+				C71B05AD1AA0148800494562 /* cardView.swift */,
+				C71B05AF1AA014A000494562 /* cardView.xib */,
 				C76D5D171A9FE6E00004F5E5 /* ViewController.swift */,
 				C76D5D191A9FE6E00004F5E5 /* Main.storyboard */,
 				C76D5D1C1A9FE6E00004F5E5 /* Images.xcassets */,
@@ -90,6 +100,8 @@
 		C76D5D131A9FE6E00004F5E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C78A41E71AA00C8200218D77 /* Montserrat-Light.otf */,
+				C78A41E81AA00C8200218D77 /* Montserrat-Regular.otf */,
 				C76D5D141A9FE6E00004F5E5 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -192,9 +204,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C71B05B01AA014A000494562 /* cardView.xib in Resources */,
 				C76D5D1B1A9FE6E00004F5E5 /* Main.storyboard in Resources */,
 				C76D5D201A9FE6E00004F5E5 /* LaunchScreen.xib in Resources */,
 				C76D5D1D1A9FE6E00004F5E5 /* Images.xcassets in Resources */,
+				C78A41EA1AA00C8200218D77 /* Montserrat-Regular.otf in Resources */,
+				C78A41E91AA00C8200218D77 /* Montserrat-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C71B05AE1AA0148800494562 /* cardView.swift in Sources */,
 				C76D5D181A9FE6E00004F5E5 /* ViewController.swift in Sources */,
 				C76D5D161A9FE6E00004F5E5 /* AppDelegate.swift in Sources */,
 			);
@@ -409,6 +425,7 @@
 				C76D5D311A9FE6E10004F5E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C76D5D321A9FE6E10004F5E5 /* Build configuration list for PBXNativeTarget "newConfirmationTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +434,7 @@
 				C76D5D341A9FE6E10004F5E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
