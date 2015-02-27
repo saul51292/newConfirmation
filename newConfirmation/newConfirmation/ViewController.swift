@@ -22,10 +22,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        setCard(fourthCard, cardName: "Delivery")
+        
+        
+        setCard(fourthCard, cardName: "Confirmation")
         setCard(thirdCard, cardName: "Shipping")
         setCard(secondCard, cardName: "Return")
-        setCard(firstCard, cardName: "Confirmation")
+        setCard(firstCard, cardName: "Delivery")
         
     }
 
@@ -43,7 +45,7 @@ class ViewController: UIViewController {
             cardType.changeTitle("Return Policy", subTitle: "14 Days", color: cardType.returnColor)
         case "Delivery":
             cardType.changeContent("Aug. 25", subContent: "Before 8PM", mainImage: UIImage(named: "FedExLogo")!)
-            cardType.changeTitle("Est. Delivery", subTitle: "Thurs.", color: cardType.deliveryColor)
+            cardType.changeTitle("Est. Delivery", subTitle: "Thurs", color: cardType.deliveryColor)
         case "Shipping":
             cardType.changeTitle("Shipping", subTitle: "Change", color: cardType.shippingColor)
             cardType.changeToList("Saul Hamadani", contentTwo: "2216 Homecrest Ave", contentThree: "Brooklyn, NY 11229")
