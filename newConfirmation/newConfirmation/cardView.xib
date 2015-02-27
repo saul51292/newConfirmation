@@ -20,6 +20,7 @@
                 <outlet property="mainTitleLabel" destination="TBb-NP-sAH" id="Imi-As-9sD"/>
                 <outlet property="smallMainLabel" destination="JIf-1w-Whl" id="Vxt-wm-nzO"/>
                 <outlet property="subTitleLabel" destination="bdt-Hu-sGV" id="psJ-Kz-c8v"/>
+                <outlet property="tapRec" destination="b6p-0Z-bKw" id="YBz-9Q-j2R"/>
                 <outlet property="topView" destination="zdy-j7-V2L" id="yLW-op-qFu"/>
             </connections>
         </placeholder>
@@ -96,6 +97,7 @@
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="xbB-u0-OHN" firstAttribute="top" secondItem="zdy-j7-V2L" secondAttribute="bottom" constant="17" id="1rX-tr-xPb"/>
                 <constraint firstItem="TBb-NP-sAH" firstAttribute="centerX" secondItem="wCf-ja-SON" secondAttribute="centerX" constant="31.5" id="6QH-hN-rYG"/>
@@ -130,8 +132,12 @@
                     <exclude reference="yx5-dl-weE"/>
                 </mask>
             </variation>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="b6p-0Z-bKw" appends="YES" id="iCN-ct-IRJ"/>
+            </connections>
             <point key="canvasLocation" x="253" y="63"/>
         </view>
+        <tapGestureRecognizer id="b6p-0Z-bKw"/>
     </objects>
     <resources>
         <image name="FedExLogo" width="99" height="42"/>

@@ -173,6 +173,7 @@
 				TargetAttributes = {
 					C76D5D0F1A9FE6E00004F5E5 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 59J7DDK7Q3;
 					};
 					C76D5D241A9FE6E10004F5E5 = {
 						CreatedOnToolsVersion = 6.3;
@@ -359,6 +360,7 @@
 				INFOPLIST_FILE = newConfirmation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -369,6 +371,7 @@
 				INFOPLIST_FILE = newConfirmation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

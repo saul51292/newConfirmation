@@ -18,6 +18,7 @@ class cardView: UIView {
     @IBOutlet var topView: UIView!
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet var tapRec: UITapGestureRecognizer!
     var returnColor = UIColor(red: 41/255, green: 128/255, blue: 185/255, alpha: 1.0)
     var  deliveryColor   = UIColor(red: 192/255, green: 57/255, blue: 43/255, alpha: 1.0)
     var  shippingColor   = UIColor(red: 211/255, green: 84/255, blue: 0/255, alpha: 1.0)
