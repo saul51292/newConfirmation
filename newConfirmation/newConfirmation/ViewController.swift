@@ -58,7 +58,8 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         var allCards = [firstCard,secondCard,thirdCard,fourthCard]
         for card in allCards
         {
-            card.tapRec.addTarget(self, action: "tappedView")       }
+            card.tapRec.addTarget(self, action: "tappedView:")
+        }
     }
     
 
@@ -76,18 +77,39 @@ class ViewController: UIViewController,UIScrollViewDelegate {
     }
     
     
-    func tappedView()
+    func tappedView(tapRec:UITapGestureRecognizer)
     {
-       if(!isExpanded)
-       {
-            setScrollSize()
+        if(!isExpanded)
+        {
+            
+        switch(tapRec){
+        case firstCard.tapRec:
+            moveView(firstCard, second: secondCard, third: thirdCard, fourth: fourthCard, firstY:0, secondY:220, thirdY:440, fourthY:660)
+        case secondCard.tapRec:
+            moveView(secondCard, second: firstCard, third: thirdCard, fourth: fourthCard, firstY:50, secondY:190, thirdY:450, fourthY:670)
+        case thirdCard.tapRec:
+            println("third")
+            moveView(thirdCard, second: firstCard, third: secondCard, fourth: fourthCard,firstY:100, secondY:200, thirdY:420, fourthY:680)
+        case fourthCard.tapRec:
+            println("fourth")
+            moveView(fourthCard, second: thirdCard, third: secondCard, fourth: firstCard,firstY:170, secondY:310, thirdY:450, fourthY:590)
+        default:
+            println("error")
+        }
+       
+        scrollView.scrollEnabled = true
+        setScrollSize()
             changeTop()
-            moveView()
+            self.gradient.hidden = false
+
             isExpanded = true
         }
        else{
+            scrollView.scrollEnabled = false
             changeBack()
             isExpanded = false
+            self.gradient.hidden = true
+
         }
     }
     
@@ -120,7 +142,7 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         scrollView.contentSize = CGSizeMake(320, scrollViewHeight)
     }
     
-    func moveView()
+    func moveView(first:cardView, second:cardView, third:cardView, fourth:cardView,firstY:CGFloat, secondY:CGFloat, thirdY:CGFloat, fourthY:CGFloat)
     {
         
         
@@ -128,19 +150,18 @@ class ViewController: UIViewController,UIScrollViewDelegate {
             delay: 0,
             options: .CurveEaseInOut,
             animations: {
-                self.firstCard.transform = CGAffineTransformMakeTranslation(0, 0)
-                self.secondCard.transform = CGAffineTransformMakeTranslation(0, 220)
-                self.thirdCard.transform = CGAffineTransformMakeTranslation(0, 440)
-                self.fourthCard.transform = CGAffineTransformMakeTranslation(0, 660)
+                
+                first.transform = CGAffineTransformMakeTranslation(0, firstY)
+                second.transform = CGAffineTransformMakeTranslation(0, secondY)
+                third.transform = CGAffineTransformMakeTranslation(0, thirdY)
+                fourth.transform = CGAffineTransformMakeTranslation(0, fourthY)
                 self.scrollView.frame = CGRectMake(0, 0, self.scrollView.frame.width, self.view.bounds.height)
                 self.createGradient()
-                self.gradient.hidden = false
             }, completion:nil)
     }
     
     func moveBack()
     {
-        
         
         UIView.animateWithDuration(1,
             delay: 0,
@@ -152,10 +173,9 @@ class ViewController: UIViewController,UIScrollViewDelegate {
                 self.thirdCard.transform = identity
                 self.fourthCard.transform = identity
                 self.scrollView.frame = self.keepScrollFrame
-                self.gradient.hidden = true
-
+                self.scrollView.setContentOffset(CGPointZero, animated: false)
                 
-            }, completion:nil)
+            }, completion:nil )
     }
     
     func putTopBack()
@@ -164,8 +184,8 @@ class ViewController: UIViewController,UIScrollViewDelegate {
             delay: 0,
             options: .CurveEaseInOut,
             animations: {
-                self.descriptionLabel.hidden = false
-                self.companyLabel.hidden = false
+                self.descriptionLabel.alpha = 1.0
+                self.companyLabel.alpha = 1.0
                 self.orderImage.transform = CGAffineTransformIdentity
                
 
@@ -182,8 +202,8 @@ class ViewController: UIViewController,UIScrollViewDelegate {
             delay: 0,
             options: .CurveEaseInOut,
             animations: {
-                self.descriptionLabel.hidden = true
-                self.companyLabel.hidden = true
+                self.descriptionLabel.alpha = 0.0
+                self.companyLabel.alpha = 0.0
                 var scaleButton = CGAffineTransformMakeScale(0.7, 0.7)
                 var centerButton = CGAffineTransformMakeTranslation(self.view.bounds.width/6, -45)
                 self.orderImage.transform = CGAffineTransformConcat(scaleButton, centerButton)
@@ -192,11 +212,7 @@ class ViewController: UIViewController,UIScrollViewDelegate {
 
     }
     
-    
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        
-       
-        }
+
     
     func animateViewsSpringingUp(views: UIView...){
         var time = Double(1.0/Double(views.count))
@@ -214,7 +230,6 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         }
     }
 
-    
     
     func setCard(cardType:cardView, cardName:String)
     {
