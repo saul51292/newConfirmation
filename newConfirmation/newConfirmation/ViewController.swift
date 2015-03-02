@@ -21,13 +21,17 @@ class ViewController: UIViewController,UIScrollViewDelegate {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var backImage: UIImageView!
     
+    @IBOutlet var bottomView: UIView!
     
     @IBOutlet var companyLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     
+    @IBOutlet var doneButton: UIButton!
     @IBOutlet var orderImage: UIImageView!
     
+    @IBOutlet var shareButton: UIButton!
     @IBOutlet var orderView: UIView!
+    @IBOutlet var thanksLabel: UILabel!
     
     let springDamp:CGFloat = 0.7
     let initSpring:CGFloat = 0.8
@@ -46,7 +50,8 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         scrollView.delegate = self
         keepScrollFrame = scrollView.frame
         addTapRecognizer()
-
+        blurThis()
+        scrollView.scrollEnabled = false
         setCard(fourthCard, cardName: "Confirmation")
         setCard(thirdCard, cardName: "Shipping")
         setCard(secondCard, cardName: "Return")
@@ -112,6 +117,22 @@ class ViewController: UIViewController,UIScrollViewDelegate {
 
         }
     }
+    
+    
+    func blurThis()
+    {
+        
+        var darkBlur = UIBlurEffect(style: .Light)
+        // 2
+        var blurView = UIVisualEffectView(effect: darkBlur)
+        blurView.frame = bottomView.bounds
+        // 3
+        bottomView.addSubview(blurView)
+        bottomView.bringSubviewToFront(doneButton)
+        bottomView.bringSubviewToFront(shareButton)
+        
+    }
+    
     
     func changeBack()
     {
@@ -187,7 +208,8 @@ class ViewController: UIViewController,UIScrollViewDelegate {
                 self.descriptionLabel.alpha = 1.0
                 self.companyLabel.alpha = 1.0
                 self.orderImage.transform = CGAffineTransformIdentity
-               
+                self.thanksLabel.alpha = 1.0
+
 
                 
                 
@@ -205,9 +227,10 @@ class ViewController: UIViewController,UIScrollViewDelegate {
                 self.descriptionLabel.alpha = 0.0
                 self.companyLabel.alpha = 0.0
                 var scaleButton = CGAffineTransformMakeScale(0.7, 0.7)
-                var centerButton = CGAffineTransformMakeTranslation(self.view.bounds.width/6, -45)
+                var centerButton = CGAffineTransformMakeTranslation(65, -45)
                 self.orderImage.transform = CGAffineTransformConcat(scaleButton, centerButton)
-                
+                self.thanksLabel.alpha = 0.0
+
             }, completion:nil)
 
     }
